@@ -108,7 +108,7 @@ namespace Game21
                 {
                     Console.WriteLine($"Enter who receives first cards?\n{compOrYou}");
                     answer = Console.ReadLine();
-                } while (answer != "c" && answer != "c");
+                } while (answer != "c" && answer != "y");
 
                 string firstPlayer = "You";
 
@@ -181,6 +181,12 @@ namespace Game21
                     if (cont == "no")
                     {
                         continueGame = false;
+
+                        while (compTotalCards < 17)
+                        {
+                            compTotalCards += (int)cards[c].Value;
+                            c++;
+                        }
                     }
                     else
                     {
